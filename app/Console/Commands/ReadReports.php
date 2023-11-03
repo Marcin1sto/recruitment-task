@@ -41,6 +41,8 @@ class ReadReports extends Command
      */
     public function handle()
     {
+        // TODO: Powinna być utworzona również walidacja Message z reportu
+
         Log::info('Read reports command started.');
         $files = Storage::disk('reports')->files();
 
