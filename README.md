@@ -1,3 +1,20 @@
+# Uruchomienie aplikacji
+
+Uruchomienie:
+```bash 
+    docker-compose up -d
+```
+
+Wejscie do kontenera:
+```bash 
+    docker-compose exec app bash
+```
+
+Zatrzymanie:
+```bash 
+    docker-compose down
+```
+
 # Komenda do przetwarzania raportów
 
 Aby przetworzyć raporty, użyj następującej komendy Artisan:
