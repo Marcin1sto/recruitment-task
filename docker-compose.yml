@@ -1,0 +1,19 @@
+version: "3.4"
+services:
+    app:
+        build: './.docker/app/'
+        env_file: .env
+        volumes:
+            - .:/app
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+    consumer:
+        extends:
+            service: app
+        command: /bin/sh -c "if [ ! -f vendor/autoload.php ] ; then composer install"
+        profiles: ["cli"]
+    install:
+        extends:
+            service: app
+        command: /bin/sh -c "composer install"
+        profiles: ["cli"]
